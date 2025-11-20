@@ -2,12 +2,6 @@
 var express = require("express");
 // create an express application
 var app = express();
-
-// testing 123 (ONLY for testing express server)
-app.use('/',function(req,res){
-res.send('HelloWorld');
-});
-
 // view engine setup
 app.set("view engine", "ejs");
 // allow us to read data from HTML forms
@@ -24,7 +18,5 @@ app.listen(3000);
 console.log("Server started on http://localhost:3000");
 // export the app for testing purposes
 module.exports = app;
-
-
 
 //testing123
