@@ -7,7 +7,5 @@ footer {
     padding: 10px 0;
 }
 
-/* center h1 text */
-h1 {
-    text-align: center;
-}
+/* center text */
+h1, h4 {text-align: center;}
