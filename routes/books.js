@@ -1,12 +1,12 @@
-//testing123
+//testing-routes
 const express = require("express");
-//testing123
+//testing-routes
 const router = express.Router();
-//testing123
+//testing-routes
 router.get("/", (req, res) => {
-//testing123
-  res.send("Hello World!");
+//testing-routes
+  res.render("home");
 });
-//testing123
-module.exports = app;
-//testing123
+//testing-routes
+module.exports = router;
+//testing-routes
