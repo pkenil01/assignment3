@@ -1,23 +1,50 @@
-<!--home page-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="stylesheet" href="/stylesheets/styles.css">
-</head>
+<!--header and navigation partials-->
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
 
-<body>
-    <!--include header partial-->
-    <%- include('partials/header') %>
+<!--main page heading-->
+<main class="container mt-2 text-center">
+    <h1>Personal Book Library</h1>
+</main>
 
-    <!--home page content-->
-    <main>
-        <h4>Home Page</h4>
-    </main>
-    
-    <!--include footer partial-->
-    <%- include('partials/footer') %>
-</body>
-</html>
+<!--books table-->
+<main class="container mt-4">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <h2>Books</h2> 
+            <br>
+            <!--add book button-->
+            <a href="/books/add" class="btn btn-primary mb-3">Add a Book</a>
+            <!--books table-->
+            <table class="table table-bordered table-striped table-hover">
+                <!--table header row-->
+                <tr class="d-flex">
+                    <th class="text-center col-3">Title</th>
+                    <th class="text-center col-5">Notes</th>
+                    <th class="text-center col-2">Author</th>
+                    <th class="text-center col-1">Edit</th>
+                    <th class="text-center col-1">Delete</th>
+                </tr>
+                <!-- loop to display each book's details in a table row -->
+                <% for (let i = 0; i < books.length; i++) { %>
+                <tr class="d-flex">
+                    <!--book details-->
+                    <td class="text-center col-3"><%= books[i].title %></td>
+                    <td class="text-center col-5"><%= books[i].description %></td> 
+                    <td class="text-center col-2"><%= books[i].author %></td> 
+                    <td class="text-center col-1">
+                        <!--edit button-->
+                        <a href="/books/edit/<%= books[i]._id %>" class="btn btn-primary btn-sm">Edit</a>
+                    </td>
+                    <td class="text-center col-1">
+                        <!--delete button-->
+                        <a href="/books/delete/<%= books[i]._id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</main>
+<!--footer partial-->
+<%- include ../partials/footer.ejs %>
