@@ -1,0 +1,40 @@
+<!--header partial-->
+<%- include('partials/header.ejs') %>
+
+<!--edit book form-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <!--form heading-->
+            <h1 class="text-center mt-2">Edit Book</h1>
+            <!--form to edit an existing book-->
+            <form class="form" method="POST">
+                <!--book title input with pre-filled value-->
+                <div class="form-group mb-3">
+                    <label for="titleTextField">Title:</label>
+                    <input type="text" class="form-control" id="titleTextField"
+                           name="title" value="<%= book.title %>" required>
+                </div>
+                <!--book notes input with pre-filled value-->
+                <div class="form-group mb-3">
+                    <label for="notesTextArea">Notes:</label>
+                    <textarea class="form-control" id="notesTextArea"
+                              name="notes" required><%= book.notes %></textarea>
+                </div>
+                <!--book author input with pre-filled value-->
+                <div class="form-group mb-3">
+                    <label for="authorTextField">Author:</label>
+                    <input type="text" class="form-control" id="authorTextField"
+                           name="author" value="<%= book.author %>" required>
+                </div>
+                <!--form submit and cancel buttons-->
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/books" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--footer partial-->
+<%- include('partials/footer.ejs') %>
