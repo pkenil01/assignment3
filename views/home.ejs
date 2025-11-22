@@ -1,6 +1,5 @@
 <!--header and navigation partials-->
 <%- include ../partials/header.ejs %>
-<%- include ../partials/main_nav.ejs %>
 
 <!--main page heading-->
 <main class="container mt-2 text-center">
@@ -13,8 +12,6 @@
         <div class="offset-md-1 col-md-10">
             <h2>Books</h2> 
             <br>
-            <!--add book button-->
-            <a href="/books/add" class="btn btn-primary mb-3">Add a Book</a>
             <!--books table-->
             <table class="table table-bordered table-striped table-hover">
                 <!--table header row-->
@@ -30,7 +27,7 @@
                 <tr class="d-flex">
                     <!--book details-->
                     <td class="text-center col-3"><%= books[i].title %></td>
-                    <td class="text-center col-5"><%= books[i].description %></td> 
+                    <td class="text-center col-5"><%= books[i].notes %></td> 
                     <td class="text-center col-2"><%= books[i].author %></td> 
                     <td class="text-center col-1">
                         <!--edit button-->
